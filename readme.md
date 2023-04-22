@@ -1,10 +1,11 @@
 
 How to setup database
-open xamp and start Apache and MySQL
-Open localhost/phpmyadmin on your webbrowser
-make new database with the name of oopdatacollectioninfomatik
-click on SQL
-write:
+
+Open xamp and start Apache and MySQL.
+Open localhost/phpmyadmin on your webbrowser.
+Make new database with the name of oopdatacollectioninfomatik.
+Click on SQL and write:
+
 CREATE TABLE users (
   users_id int(11) AUTO_INCREMENT PRIMARY KEY not null,
   users_uid TINYTEXT not null,
@@ -12,7 +13,7 @@ CREATE TABLE users (
   users_pwd LONGTEXT not null
 );
 
-click on SQL again and write:
+Click on SQL again and write:
 
 CREATE TABLE profiles (
   profiles_id int(11) NOT NULL AUTO_INCREMENT,
@@ -24,9 +25,9 @@ CREATE TABLE profiles (
   FOREIGN KEY (users_id) REFERENCES users(users_id)
 );
 
-Done database sat up
+Done database sat up.
 
-credit:
+Credit:
 
 login system: https://www.youtube.com/watch?v=BaEm2Qv14oU&t
 profile system: https://www.youtube.com/watch?v=SfE_bXFQmCU
