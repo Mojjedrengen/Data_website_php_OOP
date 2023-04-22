@@ -25,7 +25,7 @@ class ProfileInfoContr extends ProfileInfo {
         }
 
         // Update profile info
-        $this->setProfileInfo($about, $introTitle, $introText, $this->userId);
+        $this->setNewProfileInfo($about, $introTitle, $introText, $this->userId);
     }
 
     private function emptyInputCheck($about, $introTitle, $introText) {
