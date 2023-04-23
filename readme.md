@@ -25,6 +25,24 @@ CREATE TABLE profiles (
   FOREIGN KEY (users_id) REFERENCES users(users_id)
 );
 
+CREATE TABLE posts (
+	posts_id int(11) NOT NULL AUTO_INCREMENT,
+  posts_text text NOT NULL,
+  post_date date NOT NULL,
+  users_id int(11) NOT NULL,
+  PRIMARY KEY (posts_id),
+  FOREIGN KEY (users_id) REFERENCES users(users_id)
+);
+
+CREATE TABLE likes (
+	likes_id int(11) NOT NULL AUTO_INCREMENT,
+  posts_id int(11) NOT NULL,
+  users_id int(11) NOT NULL,
+  PRIMARY KEY (likes_id),
+  FOREIGN KEY (posts_id) REFERENCES posts(posts_id),
+	FOREIGN KEY (users_id) REFERENCES users(users_id)
+);
+
 Done database sat up.
 
 Credit:

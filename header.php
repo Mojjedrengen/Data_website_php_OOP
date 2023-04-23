@@ -21,9 +21,12 @@
 
                 <ul class="navigation">
                     <a href="index.php"><li>Home</li></a>
+                    <a href="posts.php"><li>Posts</li></a>
                     <?php
                         if (isset($_SESSION["userid"])) {
                             ?>
+                            <a href="myposts.php"><li>View My Posts</li></a>
+                            <a href="uploadpost.php"><li>Upload Post</li></a>
                             <a href="profile.php"><li><?php echo $_SESSION["useruid"]; ?></li></a>
                             <a href="includes/logout.inc.php"><li>Log out</li></a>
                         <?php } else { ?>
