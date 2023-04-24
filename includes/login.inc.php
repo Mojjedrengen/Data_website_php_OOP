@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include "../classes/login-contr.classes.php";
     $login = new LoginContr($uid, $pwd,);
 
-    // Running error handlers and user signup
+    // Running error handlers and user Login
     $login->loginUser();
 
     // Going back to front page
