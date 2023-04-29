@@ -38,6 +38,7 @@ CREATE TABLE likes (
 	likes_id int(11) NOT NULL AUTO_INCREMENT,
   posts_id int(11) NOT NULL,
   users_id int(11) NOT NULL,
+  likes_liked boolean NOT NULL,
   PRIMARY KEY (likes_id),
   FOREIGN KEY (posts_id) REFERENCES posts(posts_id),
 	FOREIGN KEY (users_id) REFERENCES users(users_id)
