@@ -53,7 +53,7 @@ class PostInfo extends Dbh {
 
         /*if ($stmt->rowCount() == 0) {
             $stmt = null;
-            header("location: uploadpost.php?error=postnotfound");
+            header("location: uploadpost.php?error=usernotfound");
             exit();
         }*/
 
