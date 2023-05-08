@@ -39,6 +39,28 @@
                 <label for="other">Other</label><br>
                 <button type="submit" name="submit">Sign up</button>
             </form>
+
+            <?php
+              if (isset($_GET["error"])) {
+                if ($_GET["error"] == "emptyinput") {
+                  echo "<p>Fill in all fields!</p>";
+                } else if ($_GET["error"] == "invalidphone") {
+                  echo "<p>Invalid phone number!</p>";
+                } else if ($_GET["error"] == "invalidzipcode") {
+                  echo "<p>Invalid zipcode!</p>";
+                } else if ($_GET["error"] == "username") {
+                  echo "<p>Invalid username!</p>";
+                } else if ($_GET["error"] == "email") {
+                  echo "<p>Invalid email!</p>";
+                } else if ($_GET["error"] == "passwordmatch") {
+                  echo "<p>Passwords don't match!</p>";
+                } else if ($_GET["error"] == "useroremailtaken") {
+                  echo "<p>Username or email is taken!</p>";
+                } elseif ($_GET["error"] == "stmtfailed") {
+                  echo "<p>Something went wrong, try again!</p>";
+                }
+              }
+            ?>
         </div>
       </div>
     </div>

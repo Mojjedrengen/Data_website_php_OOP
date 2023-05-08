@@ -27,7 +27,7 @@ class PostInfoView extends PostInfo {
             for($i = $index-1; $i >= 0; $i--) {
                 echo $row[$i]["posts_text"];
                 echo "<br>";
-                echo $postUserInfo[$row[$i]["users_id"]]["users_uid"];
+                echo $postUserInfo[$row[$i]["users_id"]-2]["users_uid"];
                 echo "<br>";
                 echo $row[$i]["post_date"];
                 echo "<br><br>";

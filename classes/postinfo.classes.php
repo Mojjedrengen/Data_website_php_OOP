@@ -42,7 +42,7 @@ class PostInfo extends Dbh {
         return $postInfoData;
     }
 
-    protected function getUsers() {
+    protected function getUsers() { 
         $stmt = $this->connect()->prepare('SELECT * FROM users;');
 
         if (!$stmt->execute()) {

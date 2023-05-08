@@ -13,7 +13,7 @@ class Login extends Dbh {
 
         if ($stmt->rowCount() == 0) {
             $stmt = null;
-            header("location: ../index.php?error=usernotfound");
+            header("location: ../login.php?error=usernotfound");
             exit();
         }
 
@@ -22,7 +22,7 @@ class Login extends Dbh {
 
         if ($checkpwd == false) {
             $stmt = null;
-            header("location: ../index.php?error=wrongpassword");
+            header("location: ../login.php?error=wrongpassword");
             exit();
         } elseif ($checkpwd == true) {
             $stmt = $this->connect()->prepare('SELECT * FROM users WHERE users_uid = ? OR users_email = ? AND users_pwd = ?;');
@@ -35,7 +35,7 @@ class Login extends Dbh {
 
             if ($stmt->rowCount() == 0) {
                 $stmt = null;
-                header("location: ../index.php?error=usernotfound");
+                header("location: ../login.php?error=usernotfound");
                 exit();
             }
 

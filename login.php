@@ -13,6 +13,20 @@
                 <br>
                 <button type="submit" name="submit">Log in</button>
             </form>
+
+            <?php
+                if (isset($_GET["error"])) {
+                    if ($_GET["error"] == "emptyinput") {
+                        echo "<p>Fill in all fields!</p>";
+                    } elseif ($_GET["error"] == "wrongpassword") {
+                        echo "<p>Incorrect password!</p>";
+                    } elseif ($_GET["error"] == "usernotfound") {
+                        echo "<p>User not found!</p>";
+                    } elseif ($_GET["error"] == "stmtfailed") {
+                        echo "<p>Something went wrong, try again!</p>";
+                    }
+                }
+            ?>
         </div>
       </div>
     </div>

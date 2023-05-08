@@ -37,6 +37,16 @@ class SignupContr extends Signup {
             header("location: ../signup.php?error=emptyinput");
             exit();
         }
+        if ($this->invalidPhone() == false) {
+            // echo "Invalid phone number!";
+            header("location: ../signup.php?error=invalidphone");
+            exit();
+        }
+        if ($this->invalidZipcode() == false) {
+            // echo "Invalid zipcode!";
+            header("location: ../signup.php?error=invalidzipcode");
+            exit();
+        }
         if ($this->invalidUid() == false) {
             // echo "Invalid username!";
             header("location: ../signup.php?error=username");
@@ -62,7 +72,27 @@ class SignupContr extends Signup {
 
     private function emptyInput() {
         $result = null;
-        if (empty($this->uid || empty($this->email) || empty($this->pwd) || empty($this->pwdrepeat))) {
+        if (empty($this->uid) || empty($this->email) || empty($this->firstname) || empty($this->surname) || empty($this->gender) || empty($this->birthday) || empty($this->country) || empty($this->city) || empty($this->address) || empty($this->phonenumber) || empty($this->pwd) || empty($this->pwdrepeat)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+        return $result;
+    }
+
+    private function invalidPhone() {
+        $result = null;
+        if (!preg_match("/^[0-9]*$/", $this->phonenumber)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+        return $result;
+    }
+
+    private function invalidZipcode() {
+        $result = null;
+        if (!preg_match("/^[0-9]*$/", $this->city)) {
             $result = false;
         } else {
             $result = true;
