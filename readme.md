@@ -10,7 +10,17 @@ CREATE TABLE users (
   users_id int(11) AUTO_INCREMENT PRIMARY KEY not null,
   users_uid TINYTEXT not null,
   users_email TINYTEXT not null,
-  users_pwd LONGTEXT not null
+  users_firstname TINYTEXT not null,
+  users_surname TINYTEXT not null,
+  users_gender TINYTEXT not null,
+  users_birthday DATE not null,
+  users_country TEXT not null,
+  users_city TEXT not null,
+  users_address TEXT not null,
+  users_phonenumber TINYTEXT not null,
+  users_pwd LONGTEXT not null,
+  users_dateofcreation DATE not null,
+  users_ numberofposts int(11) not null
 );
 
 Click on SQL again and write:

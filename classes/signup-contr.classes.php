@@ -16,7 +16,7 @@ class SignupContr extends Signup {
     private $pwdrepeat;
     private $date;
 
-    public function __construct($uid, $email, $firstname, $surname, $gender, $birthday, $country, $city, $address, $phonenumber,$pwd, $pwdrepeat, $date) {
+    public function __construct($uid, $email, $firstname, $surname, $gender, $birthday, $country, $city, $address, $phonenumber,$pwd, $pwdrepeat) {
         $this->uid = $uid;
         $this->email = $email;
         $this->firstname = $firstname;
@@ -29,7 +29,6 @@ class SignupContr extends Signup {
         $this->phonenumber = $phonenumber;
         $this->pwd = $pwd;
         $this->pwdrepeat = $pwdrepeat;
-        $this->date = $date;
     }
 
     public function signupUser() { //lav flere error handler
@@ -58,8 +57,7 @@ class SignupContr extends Signup {
             header("location: ../signup.php?error=useroremailtaken");
             exit();
         }
-
-        $this->setUser($this->uid, $this->email, $this->pwd);
+        $this->setUser($this->uid, $this->email, $this->firstname, $this->surname, $this->gender, $this->birthday, $this->country, $this->city, $this->address, $this->phonenumber,$this->pwd);
     }
 
     private function emptyInput() {
