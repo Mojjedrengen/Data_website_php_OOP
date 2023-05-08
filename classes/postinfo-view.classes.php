@@ -19,7 +19,7 @@ class PostInfoView extends PostInfo {
 
     public function fetchAllContent() {
         $postInfo = $this->getAllPostInfo();
-        $postUserInfo = $this->getUsers($postInfo["users_id"]);
+        $postUserInfo = $this->getUsers();
 
         if (count($postInfo) > 0) {
             $index = count($postInfo);
@@ -27,7 +27,7 @@ class PostInfoView extends PostInfo {
             for($i = $index-1; $i >= 0; $i--) {
                 echo $row[$i]["posts_text"];
                 echo "<br>";
-                echo $postUserInfo[$i]["users_uid"];
+                echo $postUserInfo[$row[$i]["users_id"]-1]["users_uid"];
                 echo "<br>";
                 echo $row[$i]["post_date"];
                 echo "<br><br>";

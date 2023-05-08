@@ -4,17 +4,35 @@ class SignupContr extends Signup {
     
     private $uid;
     private $email;
+    private $firstname;
+    private $surname;
+    private $gender;
+    private $birthday;
+    private $country;
+    private $city;
+    private $address;
+    private $phonenumber;
     private $pwd;
     private $pwdrepeat;
+    private $date;
 
-    public function __construct($uid, $email, $pwd, $pwdrepeat) {
+    public function __construct($uid, $email, $firstname, $surname, $gender, $birthday, $country, $city, $address, $phonenumber,$pwd, $pwdrepeat, $date) {
         $this->uid = $uid;
         $this->email = $email;
+        $this->firstname = $firstname;
+        $this->surname = $surname;
+        $this->gender = $gender;
+        $this->birthday = $birthday;
+        $this->country = $country;
+        $this->city = $city;
+        $this->address = $address;
+        $this->phonenumber = $phonenumber;
         $this->pwd = $pwd;
         $this->pwdrepeat = $pwdrepeat;
+        $this->date = $date;
     }
 
-    public function signupUser() {
+    public function signupUser() { //lav flere error handler
         if ($this->emptyInput() == false) {
             // echo "Empty input!";
             header("location: ../signup.php?error=emptyinput");

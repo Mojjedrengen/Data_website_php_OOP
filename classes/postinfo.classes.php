@@ -42,20 +42,20 @@ class PostInfo extends Dbh {
         return $postInfoData;
     }
 
-    protected function getUsers($userId) {
-        $stmt = $this->connect()->prepare('SELECT * FROM users WHERE users_id = ?;');
+    protected function getUsers() {
+        $stmt = $this->connect()->prepare('SELECT * FROM users;');
 
-        if (!$stmt->execute(array($userId))) {
+        if (!$stmt->execute()) {
             $stmt = null;
             header("location: uploadpost.php?error=stmtfailed");
             exit();
         }
 
-        /*if ($stmt->rowCount() == 0) {
+        if ($stmt->rowCount() == 0) {
             $stmt = null;
-            header("location: uploadpost.php?error=usernotfound");
+            header("location: post.php?error=usernotfound");
             exit();
-        }*/
+        }
 
         $postUserInfoData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
