@@ -20,7 +20,7 @@ CREATE TABLE users (
   users_phonenumber TINYTEXT not null,
   users_pwd LONGTEXT not null,
   users_dateofcreation DATE not null,
-  users_ numberofposts int(11) not null
+  users_numberofposts int(11) not null
 );
 
 Click on SQL again and write:

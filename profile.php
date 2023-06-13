@@ -13,10 +13,12 @@
     <div id="content-container">
       <div id="main">
           <div class="container">
+            <!-- didn't get to make this work
             <form action="searchuser.php" method="GET">
               <input id="search" name="search" type="text" placeholder="Search Users">
               <input id="submit" type="submit" value="Search">
             </form>
+-->
             <h3>ABOUT</h3>
             <p>
               <?php
